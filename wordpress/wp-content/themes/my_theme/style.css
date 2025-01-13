@@ -1,0 +1,302 @@
+/*
+ Theme Name: My Theme
+ Theme URI: http://example.com
+ Author: Your Name
+ Author URI: http://example.com
+ Description: Custom WordPress Theme
+ Version: 1.0
+*/
+
+/* fonts */
+
+@font-face {
+    font-family: 'VelaGX';
+    src: url(./assets/fonts/VelaSans-GX.ttf);
+    font-weight: 700;
+}
+
+
+/* общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.site-content {
+    flex: 1 1 auto;
+}
+
+.site-content{
+    margin-left: 8.33%;
+}
+
+/* header */
+.site-header {
+    background: #A1A1A1;
+    height: 100%;
+    max-height: 67px;
+    display: flex;
+    align-items: center;
+}
+.site-header .site-title a {
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Inter";
+    font-size: 16px;
+    margin-left: 8.33%;
+
+}
+.site-title a {
+    cursor: pointer;
+}
+
+@media (max-width: 360px) {
+    .site-header .site-title a {
+        font-size: 14px;
+        margin-left: 6.66%;
+    }
+}
+
+.main-navigation .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.main-navigation .nav-menu li {
+    margin-right: 1rem;
+}
+.main-navigation .nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+/* footer */
+.site-footer {
+    background: #E6E6E6;
+    font-family: "Inter";
+    font-size: 16px;
+    color: #1E1E1E;
+    height: 100%;
+    max-height: 330px;
+}
+
+.site-footer .container p{
+    margin-top: 11.03%;
+    margin-left: 8.33%;
+    
+}
+
+@media (max-width: 360px) {
+    .site-footer {
+        max-height: 356px;
+    }
+    .site-footer .container p{
+        font-size: 14px;
+        margin-left: 6.66%;
+    }
+}
+
+
+
+.promotion-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.promotion-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+.promotion-image img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+.promotion-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+.promotion-back a {
+    display: inline-block;
+    margin-top: 2rem;
+    color: #0073aa;
+    text-decoration: none;
+}
+.promotion-back a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* главная */
+.articles, .services {
+    margin-top: 64px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.articles span {
+    font-family: 'VelaGX';
+    font-size: 36px;
+    color: #1E1E1E;
+}
+
+/* статьи */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(32.58%, 1fr));
+    gap: 13px;
+    margin-top: 46px;
+}
+.article-item {
+    border: 1.69px solid none;
+    border-radius: 5px;
+    overflow: hidden;
+    background: none;
+}
+.article-image {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+}
+.article-title {
+    font-family: "Inter";
+    font-size: 20px;
+    margin: 20px 20px 0 20px;
+}
+
+.article-item p {
+    margin-left: 20px;
+}
+
+.article-excerpt {
+    font-family: "Inter";
+    font-weight: 400;
+    color: #343434;
+    font-size: 14px;
+    margin-top: 14px;
+}
+.article-date{
+    font-family: "Inter";
+    font-weight: 400;
+    color: #A1A1A1;
+    font-size: 14px;
+    margin-top: 29px;
+}
+
+/* услуги */
+.services-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+.service-item {
+    flex: 0 0 390px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
+}
+.service-image {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+}
+.service-title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.service-price, .service-type {
+    color: #666;
+    font-size: 14px;
+}
+.service-type {
+    display: inline-block;
+    margin: 10px 0;
+    color: #007bff;
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+    .site-content {
+        margin-left: 6.66%;
+    }
+    .articles-grid {
+        grid-template-columns: 1fr;
+
+    }
+    .article-item {
+        max-width: 312px;
+    }
+    .services-slider {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    .service-item {
+        flex: 0 0 calc(100% - 30px);
+    }
+}
+
+
+
+/* стилизация формы */
+.contact-form {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
