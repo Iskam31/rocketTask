@@ -10,18 +10,19 @@ if ($query->have_posts()) : ?>
         <span>Статьи</span>
         <div class="articles-grid">
             <?php while ($query->have_posts()) : $query->the_post(); ?>
-                <article class="article-item">
-                    <a href="<?php the_permalink(); ?>">
+                <a href="<?php the_permalink(); ?>">
+                    <article class="article-item">
                         <?php if (has_post_thumbnail()) : ?>
                             <?php the_post_thumbnail('medium', ['class' => 'article-image']); ?>
                         <?php else : ?>
                             <img src="<?php echo get_template_directory_uri(); ?>./assets/images/article1.png" class="article-image" alt="Нет изображения">
                         <?php endif; ?>
-                    </a>
-                    <h3 class="article-title"><?php the_title(); ?></h3>
-                    <p class="article-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
-                    <p class="article-date"><?php echo get_the_date('d.m.Y'); ?></p>
-                </article>
+                    
+                        <h3 class="article-title"><?php the_title(); ?></h3>
+                        <p class="article-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
+                        <p class="article-date"><?php echo get_the_date('d.m.Y'); ?></p>
+                    </article>
+                </a>
             <?php endwhile; ?>
         </div>
     </section>

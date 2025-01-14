@@ -90,4 +90,18 @@ function save_price_meta_box($post_id) {
     }
 }
 add_action('save_post', 'save_price_meta_box');
+
+// swiper
+function enqueue_swiper_styles() {
+    wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css', [], null);
+    wp_enqueue_script( 'swiper-script', 'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js', array(), false, true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_swiper_styles' );
+
+function enqueue_custom_scripts() {
+    // Подключить инициализацию Swiper
+    wp_enqueue_script('swiper-init', get_template_directory_uri() . '/js/swiper-init.js', ['swiper-script'], null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
 ?>

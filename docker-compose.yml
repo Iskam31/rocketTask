@@ -21,12 +21,15 @@ services:
       - ./wordpress/wp-content:/var/www/html/wp-content
     ports:
       - "8000:80"
+      - "21:21"
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+    extra_hosts:
+      - "localhost:172.17.0.1"
 volumes:
   wordpress:
   wp-content:
