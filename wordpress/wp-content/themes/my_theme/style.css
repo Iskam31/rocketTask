@@ -23,9 +23,20 @@
     box-sizing: border-box;
 }
 html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    justify-content: space-between;
+}
+footer {
+    background-color: #f8f9fa;
+    position: relative; /* или static */
+    bottom: 0;
+    width: 100%;
 }
 .container {
     width: 100%;
@@ -40,7 +51,7 @@ html, body {
 /* header */
 .site-header {
     background: #A1A1A1;
-    height: 100%;
+    height: 67px !important;
     max-height: 67px;
     display: flex;
     align-items: center;
@@ -76,12 +87,13 @@ html, body {
 
 /* footer */
 .site-footer {
+    display: flex;
+    justify-content: center;
     background: #E6E6E6;
     font-family: "Inter";
     font-size: 16px;
     color: #1E1E1E;
-    height: 100%;
-    max-height: 330px;
+    height: 330px;
 }
 
 .site-footer .container p{
@@ -197,6 +209,61 @@ html, body {
     margin-bottom: 20px;
 }
 
+/* статьи отдельная страница */
+.site-content.single {
+    display: flex;
+    flex-direction: column;
+}
+
+.single-article {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 0 24px;
+}
+.single-article-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 20px;
+}
+.single-article-wrapper img {
+    object-fit: cover;
+    width: 100%;
+}
+.single-article-title {
+    font-family: "Inter";
+    font-size: 18px;
+    text-align: right;
+}
+.single-article-meta {
+    font-family: "Inter";
+    font-size: 14px;
+    text-align: right;
+}
+.article-date {
+}
+.single-article-image{
+    border-radius: 8px;
+
+}
+.single-article-box-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.single-article-content {
+    font-family: "Inter";
+    font-size: 14px;
+    text-align: right;
+}
+.contact-form {
+}
+
+
+
+
+
 /* услуги */
 .swiper-container {
     display: flex;
@@ -223,6 +290,11 @@ html, body {
     position: relative;
     max-width: 285px;
 }
+
+.service-item a {
+    text-decoration: none;
+}
+
 .service-image {
     width: 100%;
     height: 185px;
@@ -248,7 +320,7 @@ html, body {
     position: absolute;
 }
 
-.service-item__title{
+.service-item__title {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -261,7 +333,6 @@ html, body {
     font-size: 20px;
     color: #A1A1A1;
     margin: 0 0 0 20px;
-
 }
 .service-type {
     display: flex;
@@ -305,8 +376,10 @@ html, body {
 
 @media (max-width: 768px) {
     .site-footer {
-        margin-top: 24px;
         height: 346px;
+    }
+    .site-header {
+        height: 67px !important;
     }
     .site-content {
         max-width: 360px;
@@ -369,22 +442,65 @@ html, body {
         opacity: 1;
     }
     
+
+    /* отдельная страница статей */
+    .single-article-wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 380px;
+        padding: 0 24px;
+        gap: 20px;
+        align-items: center;
+    }
 }
 
 
 
 /* стилизация формы */
 .contact-form {
+    margin: auto;
     margin-top: 40px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    padding: 0 24px;
     border-radius: 8px;
+    background-color: #E6E6E6;
+    border: none;
+}
+
+.contact-form.hidden {
+    display: none;
+}
+.contact-form.hidden {
+    display: none;
+}
+
+.show-form-btn {
+    display: flex;
+    justify-content: center;
+    font-family: "Inter";
+    font-weight: 700;
+    background-color: #E6E6E6;
+    width: 40%;
+    color: #000000;
+    border: none;
+    margin-top: 48px;
+    margin-bottom: 24px;
+    margin-left: 24px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.show-form-btn:hover {
+    background-color: #939393;
 }
 
 .contact-form h2 {
+    font-family: "Inter";
+    padding-top: 24px;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 18px;
     color: #333;
 }
 
@@ -393,14 +509,15 @@ html, body {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
     border-radius: 4px;
+    border: none;
     font-size: 16px;
+    max-height: 50px;
 }
 
 .contact-form input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #b8b8b8;
+    color: #333333;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -409,5 +526,5 @@ html, body {
 }
 
 .contact-form input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #818181;
 }

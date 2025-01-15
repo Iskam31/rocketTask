@@ -25,11 +25,12 @@ if ($query->have_posts()) : ?>
                         <?php else : ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/my-themes-assets/default-image.jpg" class="service-image" alt="Нет изображения">
                         <?php endif; ?>
+                    
+                        <div class="service-item__title">
+                            <div class="service-title"><?php the_title(); ?></div>
+                            <div class="service-price">от <?php echo get_post_meta(get_the_ID(), 'price', true); ?> ₽</div>
+                        </div>
                     </a>
-                    <div class="service-item__title">
-                        <h3 class="service-title"><?php the_title(); ?></h3>
-                        <p class="service-price">от <?php echo get_post_meta(get_the_ID(), 'price', true); ?> ₽</p>
-                    </div>
                 </div>
             <?php endwhile; ?>
         </div>

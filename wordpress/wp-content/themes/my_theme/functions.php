@@ -104,4 +104,14 @@ function enqueue_custom_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
+function enqueue_scroll_to_form_scripts() {
+    // Подключаем CSS для скрытия формы
+    wp_enqueue_style('scroll-to-form-style', get_template_directory_uri() . './assets/css/style-form.css');
+
+    // Подключаем JavaScript для появления формы
+    wp_enqueue_script('scroll-to-form-script', get_template_directory_uri() . '/js/form-init.js', [], null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_scroll_to_form_scripts');
+
+
 ?>
