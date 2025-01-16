@@ -22,7 +22,7 @@
     <!-- Форма обратной связи -->
     <section class="contact-form hidden">
         <h2>Свяжитесь с нами</h2>
-        <?php echo do_shortcode('[contact-form-7 id="e7643b6" title="Обратная связь статей"]'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="3f647b6" title="Обратная связь статей"]'); ?>
     </section>
 </main>
 <?php get_footer(); ?>
