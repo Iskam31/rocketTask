@@ -17,8 +17,8 @@ services:
     image: wordpress:latest
     container_name: rocket_wp
     volumes:
-      - ./wordpress:/var/www/html
-      - ./wordpress/wp-content:/var/www/html/wp-content
+      - wordpress:/var/www/html
+      - ./my_theme/:/var/www/html/wp-content/themes/my_theme
     ports:
       - "8000:80"
     restart: always
@@ -29,5 +29,4 @@ services:
       WORDPRESS_DB_NAME: wordpress
 volumes:
   wordpress:
-  wp-content:
   db_data_wp: {}
