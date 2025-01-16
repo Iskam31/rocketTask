@@ -2,9 +2,9 @@ FROM wordpress:latest
 
 COPY ./my_theme/ /var/www/html/wp_content/themes/my_theme/
 
-RUN mkdir -p /var/www/html/wp-content/uploads && \
-    mkdir -p /var/www/html/wp-content/upgrade && \
-    chown -R www-data:www-data /var/www/html/wp-content
+COPY init.sh /usr/local/bin/init.sh
+RUN chmod +x /usr/local/bin/init.sh
+ENTRYPOINT ["sh", "/usr/local/bin/init.sh"]
 
 EXPOSE 80
 
