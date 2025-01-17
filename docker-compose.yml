@@ -18,7 +18,6 @@ services:
     container_name: rocket_wp
     volumes:
       - wordpress:/var/www/html
-      - ./my_theme/:/var/www/html/wp-content/themes/my_theme
       - ./wp_content/uploads:/var/www/html/wp-content/uploads
       - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
     ports:
