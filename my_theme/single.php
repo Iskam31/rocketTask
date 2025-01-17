@@ -20,6 +20,9 @@
     </section>
     <button id="show-form-btn" class="show-form-btn">Связаться с нами</button>
     <!-- Форма обратной связи -->
+    <!-- contact-form-namearea
+    contact-form-emailarea
+    contact-form-textarea -->
     <section class="contact-form hidden">
         <h2>Свяжитесь с нами</h2>
         <?php echo do_shortcode('[contact-form-7 id="3f647b6" title="Обратная связь статей"]'); ?>
