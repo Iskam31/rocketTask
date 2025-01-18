@@ -18,10 +18,11 @@ services:
     container_name: rocket_wp
     volumes:
       - wordpress:/var/www/html
+      - ./my_theme:/var/www/html/wp-content/themes/my-theme
       - ./wp_content/uploads:/var/www/html/wp-content/uploads
       - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
     ports:
-      - "8000:80"
+      - "80:80"
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
