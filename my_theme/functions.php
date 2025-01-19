@@ -113,12 +113,15 @@ function enqueue_scroll_to_form_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_scroll_to_form_scripts');
 
-add_filter('wpcf7_form_hidden_fields', 'add_post_title_to_cf7');
-function add_post_title_to_cf7($hidden_fields) {
-    if (is_single() || is_page()) {
-        $hidden_fields['get_post_title'] = get_the_title();
+// Шорткод для получения названия текущей записи
+add_filter('wpcf7_form_hidden_fields', function ($hidden_fields) {
+    if (is_singular()) { // Проверяем, что это страница записи
+        $hidden_fields['post-title'] = get_the_title(); // Добавляем заголовок записи
     }
     return $hidden_fields;
-}
+});
+
+
+
 
 ?>

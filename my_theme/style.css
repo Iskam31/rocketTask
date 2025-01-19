@@ -63,7 +63,8 @@ footer {
     font-family: "Inter";
     font-size: 16px;
     margin-left: 8.33%;
-
+    margin-top: 13.5px;
+    margin-bottom: 13.5px;
 }
 .site-title a {
     cursor: pointer;
@@ -97,9 +98,9 @@ footer {
 }
 
 .site-footer .container p{
-    margin-top: 11.03%;
+    margin-top: 64px;
     margin-left: 8.33%;
-    
+    margin-bottom: 280px;
 }
 
 .promotion-title {
@@ -245,6 +246,8 @@ footer {
 }
 .single-article-image{
     max-width: 600px;
+    max-height: 300px;
+    object-fit: contain;
     border-radius: 8px;
     margin-top: 24px;
 }
@@ -407,9 +410,6 @@ footer {
     .site-header {
         height: 67px !important;
     }
-    .site-content {
-        max-width: 360px;
-    }
     .articles{
         margin: auto;
         padding: 0 24px;
@@ -504,10 +504,17 @@ footer {
         font-size: 14px;
         color: #A1A1A1;
     }
-    .single-service-content {
+    .single-article-image {
+        max-width: 300px;
     }
     
-    
+    .site-footer .container p {
+        display: flex;
+        justify-content: center;
+        margin-top: 48px;
+        margin-left: 0;
+        margin-bottom: 280px
+    }
 }
 
 

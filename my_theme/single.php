@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </article>
-        <?php endwhile; endif; ?>
+
 
     </section>
     <button id="show-form-btn" class="show-form-btn">Связаться с нами</button>
@@ -27,5 +27,6 @@
         <h2>Свяжитесь с нами</h2>
         <?php echo do_shortcode('[contact-form-7 id="3f647b6" title="Обратная связь статей"]'); ?>
     </section>
+<?php endwhile; endif; ?>
 </main>
 <?php get_footer(); ?>
